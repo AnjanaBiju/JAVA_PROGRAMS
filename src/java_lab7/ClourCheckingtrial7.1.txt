@@ -1,0 +1,185 @@
+public class ColourChecking
+
+{
+
+    double red= 193d;
+
+    double green =255d;
+
+    double blue = 183d;
+
+    void colour()
+
+    {
+
+    
+    
+        double hr=red/255d;
+  
+      double hg=green/255d;
+
+        double hb=blue/255d;
+
+        double cmax=0;
+
+        double cmin=0;
+
+        double h=0;
+  
+      double s=0;
+
+        
+        if(hr>=hg)
+  
+      {
+ 
+           if(hr>=hb)
+   
+         {
+
+            
+            cmax=hr;
+  
+          System.out.println("Maximum vlaue is "+hr+"for red");
+
+            }
+
+        }
+  
+      else if(hg>hb)
+  
+      {
+    
+        cmax = hg;
+   
+         System.out.println("Maximum vlaue is "+hg+"for green");
+ 
+           
+        }
+ 
+       else
+   
+    {
+      
+      cmax= hb;
+  
+          System.out.println("Maximum vlaue is "+hb+"for blue");
+ 
+       }
+    
+    if(hr<hg)
+
+        {
+   
+         if(hr<hb)
+ 
+           {
+ 
+           cmin=hr;
+
+            System.out.println("Minimum vlaue is "+hr+"for red");
+
+            }
+ 
+       }
+   
+     else if(hg<hb)
+
+        {
+        
+      cmin = hg;
+ 
+           System.out.println("Minimum vlaue is "+hg+"for green");
+   
+        
+        }
+   
+     else
+     
+   {
+         
+     cmin= hb;
+    
+        System.out.println("Minimum vlaue is "+hb+"for blue");
+ 
+       }
+      
+  double diff=cmax-cmin;
+        if(cmax==0&&cmin==0)
+
+        {
+  
+          h=0;
+   
+         System.out.println("value of hue is 0");
+ 
+       }
+   
+     else if(hr==cmax)
+   
+     {
+    
+        h=(60*((hg-hb)/diff)+360%360);
+ 
+           System.out.println("Value of hue is : " + h);
+  
+      }
+   
+     else if(cmax==hg)
+ 
+       {
+  
+          h=(60*((hb-hr)/diff)+360 % 360);
+
+            System.out.println("Value of hue is : " + h);
+
+        }
+      
+  else if(cmax== hb)
+ 
+       {
+     
+       h=(60*((hr-hg)/diff)+360 % 360);
+
+            System.out.println("Value of hue is : " + h);
+ 
+       }
+   
+    if(cmax==0)
+
+        {
+        
+     s=0;
+     
+       System.out.println("Value of saturation : " + s);
+ 
+       }
+   
+     else
+    
+    {
+         
+   s=(diff/cmax)*100;
+
+            double b=cmax*100;
+      
+      System.out.println("Value of brightness is : " + b);
+   
+     } 
+
+    }    
+        public static void main(String a[])
+ 
+       {
+ 
+          ColourChecking c= new ColourChecking();
+
+            c.colour();
+       
+     
+        }
+        
+        
+
+    
+}
